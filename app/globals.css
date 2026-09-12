@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #171614;
+  --paper: #e9e3d9;
+  --cream: #f6f3ed;
+  --muted: #6e6a63;
+  --line: rgba(23, 22, 20, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, #fff8 0 14%, transparent 34%),
+    linear-gradient(135deg, #d8d0c4, #eee9e1 50%, #d4ccc0);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.shell {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.glass {
+  background: #f7f4efde;
+  border: 1px solid #fff9;
+  box-shadow: 0 18px 45px #1d18130f;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  border: 1px solid #fff9;
+  border-radius: 40px;
+  background: #222;
+  box-shadow: 0 35px 80px #241f1922;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #10100db5 0%,
+      #10100d50 42%,
+      #10100d18 72%
+    ),
+    linear-gradient(
+      0deg,
+      #111a 0%,
+      transparent 50%
+    );
+  z-index: 1;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navPill {
+  margin: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  padding: 8px 9px 8px 12px;
+}
+
+.tab {
+  border-radius: 999px;
+  padding: 12px 19px;
+  font-size: 13px;
+}
+
+.tab.active {
+  background: #fff;
+  box-shadow: 0 4px 15px #1111;
+}
+
+.heroTitle {
+  font-size: clamp(54px, 7vw, 92px);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+  color: #fff;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.floatingNav {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 28px;
+  background: #fffdfbf0;
+  box-shadow: 0 15px 35px #17130e25;
+}
+
+.iconBtn {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+
+.iconBtn.active {
+  background: #191816;
+  color: white;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #777067;
+}
+
+.sectionTitle {
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.propertyCard {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #f7f4ef;
+  border: 1px solid #fff9;
+  box-shadow: 0 14px 35px #251e1712;
+}
+
+.propertyImg {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.score {
+  background: #171614;
+  color: #fff;
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.reviewStars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #171614;
+}
+
+.factCard {
+  min-height: 250px;
+  background: #181714;
+  color: #fff;
+  border-radius: 30px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.factCard::after {
+  content: "?";
+  position: absolute;
+  right: -20px;
+  bottom: -55px;
+  font-size: 190px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff0a;
+}
+
+.ctaCard {
+  border-radius: 32px;
+  background: #d8e3df;
+  min-height: 310px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #17161418;
+  width: 290px;
+  height: 290px;
+  right: -50px;
+  bottom: -130px;
+}
+
+.formShell {
+  min-height: 70vh;
+  padding: 60px 0;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff9f3;
+  border-radius: 16px;
+  padding: 14px 16px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #17161466;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 12px;
+  background: #fff8;
+}
+
+/* Mobile filter panel */
+
+.mobileFilterPanel {
+  display: none;
+}
+
+/* Mobile navigation menu */
+
+.mobileNavMenu {
+  position: absolute;
+  top: 72px;
+  right: 12px;
+  z-index: 50;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .desktop {
+    display: none !important;
+  }
+
+  .shell {
+    width: 94vw;
+    max-width: 100%;
+    margin-inline: auto;
+    overflow: visible;
+  }
+
+  .hero {
+    overflow: visible;
+    min-height: 720px;
+    border-radius: 30px;
+  }
+
+  .heroContent {
+    min-height: 720px;
+  }
+
+  .navPill {
+    margin: 12px;
+    width: calc(100% - 24px);
+    max-width: none;
+    position: relative;
+    z-index: 20;
+  }
+
+  .navPillExpanded {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 28px;
+    padding: 14px;
+    gap: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .mobileFilterPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+    padding-top: 2px;
+  }
+
+  .mobileFilterPanel > * {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .floatingNav {
+    display: none;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .heroTitle {
+    font-size: 58px;
+  }
+
+  .propertyImg {
+    height: 220px;
+  }
+
+  .mobileNavMenu {
+    position: absolute;
+    top: 68px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+}
+
+/* Smaller phones */
+
+@media (max-width: 480px) {
+
+  .shell {
+    width: 94vw;
+  }
+
+  .hero,
+  .heroContent {
+    min-height: 680px;
+  }
+
+  .navPill {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .navPillExpanded {
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .heroTitle {
+    font-size: 50px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .propertyImg {
+    height: 200px;
+  }
+}
